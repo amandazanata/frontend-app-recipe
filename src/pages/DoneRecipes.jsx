@@ -61,7 +61,7 @@ export default function DoneRecipes() {
       <Header />
       <section>
         <button
-          type="button"
+          type="button" // adicio0na comentário para fazer o push
           data-testid="filter-by-drink-btn" // data-testid solicitado no read-me
           onClick={ () => setClickBtn('drink') }
         >
