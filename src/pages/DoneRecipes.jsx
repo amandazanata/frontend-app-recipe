@@ -22,7 +22,7 @@ export default function DoneRecipes() {
       return <span>Termine alguma receita</span>;
     }
     if (clickBtn === 'all') { // faz o map para pegar o card da receita
-      return (getRecipes.map((meal, index) => (
+      return (getRecipes()?.map((meal, index) => (
         <RecipeCard
           key={ meal.id } // requisito 45 - verifica se o card possui os atributos de uma comida
           name={ meal.name }
@@ -61,7 +61,7 @@ export default function DoneRecipes() {
       <Header />
       <section>
         <button
-          type="button"
+          type="button" // adicio0na comentário para fazer o push
           data-testid="filter-by-drink-btn" // data-testid solicitado no read-me
           onClick={ () => setClickBtn('drink') }
         >
