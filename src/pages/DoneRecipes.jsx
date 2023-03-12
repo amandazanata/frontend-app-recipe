@@ -22,7 +22,7 @@ export default function DoneRecipes() {
       return <span>Termine alguma receita</span>;
     }
     if (clickBtn === 'all') { // faz o map para pegar o card da receita
-      return (getRecipes.map((meal, index) => (
+      return (getRecipes()?.map((meal, index) => (
         <RecipeCard
           key={ meal.id } // requisito 45 - verifica se o card possui os atributos de uma comida
           name={ meal.name }
