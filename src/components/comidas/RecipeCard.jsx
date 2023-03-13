@@ -27,30 +27,28 @@ export default function RecipeCard({
             src={ image }
             alt={ name }
           />
-          <div>
-            <p
-              data-testid={ `${index}-horizontal-top-text` }
-            >
-              {`${typeCheck} - ${category}`}
-            </p>
-            <p
-              data-testid={ `${index}-horizontal-name` }
-            >
-              { name }
-            </p>
-            <p
-              data-testid={ `${index}-horizontal-done-date` }
-            >
-              {`Feito em: ${doneDate}`}
-            </p>
-            <span>
-              {tags.map((tag) => (
-                <span key={ tag } data-testid={ `${index}-${tag}-horizontal-tag` }>
-                  {` ${tag}`}
-                </span>
-              ))}
-            </span>
-          </div>
+          <p
+            data-testid={ `${index}-horizontal-top-text` }
+          >
+            {`${typeCheck} - ${category}`}
+          </p>
+          <p
+            data-testid={ `${index}-horizontal-name` }
+          >
+            { name }
+          </p>
+          <p
+            data-testid={ `${index}-horizontal-done-date` }
+          >
+            {`Feito em: ${doneDate}`}
+          </p>
+          <span>
+            {tags.map((tag) => (
+              <span key={ tag } data-testid={ `${index}-${tag}-horizontal-tag` }>
+                {`${tag}`}
+              </span>
+            ))}
+          </span>
         </Link>
         <div>
           <button
