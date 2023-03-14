@@ -7,6 +7,7 @@ import Profile from './pages/Profile';
 import DoneRecipes from './pages/DoneRecipes';
 import FavoritesRecipes from './pages/FavoritesRecipes';
 import RecipeDetails from './components/recipeDetails/RecipeDetails';
+import RecipeInProgress from './components/recipeInProgress/RecipeInProgress';
 
 function Routes() {
   return (
@@ -26,13 +27,13 @@ function Routes() {
       />
       <Route
         exact
-        path="/meals/:id-da-receita/in-progress"
-        component={ Meals /* não pode possuir header */ }
+        path="/meals/:id/in-progress"
+        component={ RecipeInProgress /* não pode possuir header */ }
       />
       <Route
         exact
-        path="/drinks/:id-da-receita/in-progress"
-        component={ Drinks /* não pode possuir header */ }
+        path="/drinks/:id/in-progress"
+        component={ RecipeInProgress /* não pode possuir header */ }
       />
       <Route
         exact

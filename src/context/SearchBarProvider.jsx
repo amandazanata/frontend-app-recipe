@@ -6,6 +6,7 @@ export default function SearchBarProvider({ children }) {
   const [foodDrink, setFoodDrink] = useState('meal');
   const [inputSearchText, setInputSearchText] = useState('');
   const [receiveApi, setReceiveApi] = useState([]);
+  const [recipesInProgress, setRecipesInProgress] = useState([]);
 
   // salavando o id dos detalhes das comisa/bebidas
   const [id, setId] = useState('');
@@ -16,16 +17,19 @@ export default function SearchBarProvider({ children }) {
       inputSearchText,
       receiveApi,
       id,
+      recipesInProgress,
       setReceiveApi,
       setFoodDrink,
       setInputSearchText,
       setId,
+      setRecipesInProgress,
     }),
     [
       foodDrink,
       inputSearchText,
       receiveApi,
       id,
+      recipesInProgress,
     ],
   );
 
