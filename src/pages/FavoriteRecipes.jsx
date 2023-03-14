@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import Copys from 'clipboard-copy';
 import shareIcon from '../images/shareIcon.svg';
 import blackHeartIcon from '../images/blackHeartIcon.svg';
 import Header from '../components/Header';
@@ -112,7 +111,7 @@ export default function FavoritesRecipes() {
             {copyLink === true && <p>Link copied!</p>}
             <button
               onClick={ () => {
-                Copys(`http://localhost:3000/${recipe.type}s/${recipe.id}`);
+                navigator.clipboard.writeText(`http://localhost:3000/${recipe.type}s/${recipe.id}`); // precisei dessa sintaxe mais moderna para passar no teste
                 setCopyLink(true);
               } }
             >
