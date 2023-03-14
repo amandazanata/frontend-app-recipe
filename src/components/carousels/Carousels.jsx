@@ -27,7 +27,7 @@ export default function Carousels() {
   const id = location.pathname.split('/');
 
   const url = (id[1] === 'meals' ? 'drinks' : 'meals');/* Usando para deixa a renderização dos detalhes dinamica, de acordo co a url */
-  console.log(url);
+  // console.log(url);
 
   // Crinado linke de img dinamico para meals/drinks.
   const chave = url.slice(1, url.length - 1); // retirando a ultima letra.
@@ -52,11 +52,11 @@ export default function Carousels() {
   // recomendacoes();
   useEffect(() => {
     recomendacoes();
-    console.log(recomeda);
+    // console.log(recomeda);
   }, []);
 
-  console.log(recomeda[url]);
-  console.log(imgDinamic);
+  // console.log(recomeda[url]);
+  // console.log(imgDinamic);
 
   // const handleSelect = (selectedIndex, e) => {
   //   setSlide(selectedIndex);

@@ -6,7 +6,7 @@ import profileIcon from '../images/profileIcon.svg';
 import SearchBar from './searchBar/SearchBar';
 
 function Header({ namePage }) {
-  // renderPage e namePage para usar como props nas demais páginas para renderizar corretamente o nome das páginas
+  // namePage para usar como props nas demais páginas para renderizar corretamente o nome das páginas
   const history = useHistory();
   const [isSearch, setIsSearch] = useState(false);
 

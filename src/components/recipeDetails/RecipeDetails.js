@@ -52,12 +52,9 @@ export default function RecipeDetails() {
       // let local;
       if (location.pathname.includes('meals')) {
         redirec = await requestApis(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id[2]}`);
-        // console.log(redirec);
-        // local = JSON.parse(localStorage.getItem('inProgressRecipes')) || [];
       }
       if (location.pathname?.includes('drinks')) {
         redirec = await requestApis(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id[2]}`);
-        // local = JSON.parse(localStorage.getItem('inProgressRecipes')) || [];
       }
       return setDetalhesApi(redirec);
     };
@@ -182,9 +179,9 @@ export default function RecipeDetails() {
               onClick={ () => savedLocalStorage({
                 id: id[2],
                 type,
-                nationality: e.strArea ? e.strArea : '',
+                nationality: e.strArea || '',
                 category: e.strCategory,
-                alcoholicOrNot: e.strAlcoholic ? e.strAlcoholic : '',
+                alcoholicOrNot: e.strAlcoholic || '',
                 name: e[titleName],
                 image: e[imgDinamic],
               }) }
@@ -234,6 +231,14 @@ export default function RecipeDetails() {
 
               compartilhar
             </button>
+            {/* <button
+              data-testid="share-bts"
+              onClick={ () => {
+                setMsgHtml(false);
+              } }
+            >
+              compartilhar
+            </button> */}
             {msgHtml && <p>Link copied!</p>}
           </div>
         ))
