@@ -1,23 +1,21 @@
-import React, { /* useEffect,  */useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from '../components/Header';
 import RecipeCard from '../components/comidas/RecipeCard';
 
 export default function DoneRecipes() {
-  /* const [done, setDone] = useState([]); */
+  const [done, setDone] = useState([]);
   const [clickBtn, setClickBtn] = useState('all');
 
-  const getRecipes = JSON.parse(localStorage.getItem('doneRecipes'));
-
-  /*   (key, value) => { // pega item no localStorage
+  const getRecipes = (key, value) => { // pega item no localStorage
     const doneMeals = localStorage.getItem(key) ? JSON
       .parse(localStorage.getItem(key)) : value;
     return doneMeals;
-  }; */
+  };
 
-  /*   useEffect(() => { // coloca o item no estado
-    const getDone = getRecipes('done', []);
+  useEffect(() => { // coloca o item no estado
+    const getDone = getRecipes('doneRecipes', []);
     setDone(getDone);
-  }, []); */
+  }, []);
 
   const showCard = () => { // função com condição de colocar ou não a receita que foi marcada como 'checkada'
     if (getRecipes === null || getRecipes.length < 1) { // se igua a null ou menor que 1 retorna mensagem
@@ -56,7 +54,6 @@ export default function DoneRecipes() {
       />
     )));
   };
-
   return (
     <>
       <h1 data-testid="page-title">Done Recipes</h1>
@@ -64,13 +61,6 @@ export default function DoneRecipes() {
       <section>
         <button
           type="button"
-          data-testid="filter-by-all-btn" // data-testid solicitado no read-me
-          onClick={ () => setClickBtn('all') } // usa o click do estado para verificar o recebimento
-        >
-          All
-        </button>
-        <button
-          type="button" // adicio0na comentário para fazer o push
           data-testid="filter-by-drink-btn" // data-testid solicitado no read-me
           onClick={ () => setClickBtn('drink') }
         >
@@ -83,13 +73,20 @@ export default function DoneRecipes() {
         >
           Meals
         </button>
+        <button
+          type="button"
+          data-testid="filter-by-all-btn" // data-testid solicitado no read-me
+          onClick={ () => setClickBtn('all') } // usa o click do estado para verificar o recebimento
+        >
+          All
+        </button>
       </section>
       <div>
         {done.filter((value) => {
           switch (clickBtn) {
-          case 'meals':
+          case 'meal':
             return value.type === 'meal';
-          case 'drinks':
+          case 'drink':
             return value.type === 'drink';
           default:
             return value;
