@@ -25,7 +25,7 @@
 
 ### Projeto realizado em grupo na escola Trybe
 
-O projeto foi desenvolvido no VSCode, com desenvolvimento àgil KanBan via Trello.
+O projeto foi desenvolvido no VSCode, com metodologia ágil KanBan via Trello.
 
 <!-- Olá, Tryber!
 Esse é apenas um arquivo inicial para o README do seu projeto no qual você pode customizar e reutilizar todas as vezes que for executar o trybe-publisher.
